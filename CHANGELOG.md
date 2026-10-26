@@ -24,6 +24,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Comments or CDATA full of `<`, or text full of `=`, made parsing reserve a node
   or attribute slot per input byte up front. The initial guess is now capped by
   the input size.
+- Character references to surrogates or to values above `U+10FFFF`, like `&#xD800;`,
+  were replaced with `U+FFFD` instead of being rejected.
 
 ## [0.21.2] - 2026-10-24
 ### Fixed
